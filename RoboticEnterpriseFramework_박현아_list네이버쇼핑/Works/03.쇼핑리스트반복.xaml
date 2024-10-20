@@ -1,0 +1,245 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_02_Chrome_ExctactShoppingDT" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(x:String)" />
+    <x:Property Name="in_lst_TransactionData" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="io_dt쇼핑정보" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1084,2331.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_02_Chrome_ExctactShoppingDT_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="여기는 반복문 안입니다. " DisplayName="05.쇼핑리스트반복" sap:VirtualizedContainerService.HintSize="512,2266.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;현재 검색어 : &quot; + in_TransactionItem.ToString.Trim]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="네이버 쇼핑 페이지 | Use Application/Browser" sap:VirtualizedContainerService.HintSize="449.6,1328.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="ecb05776-9e0c-4356-961d-9adabc92c77f" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="416,1080" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="상품검색결과 | Go To URL" sap:VirtualizedContainerService.HintSize="353.6,114.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Url="[&quot;https://search.shopping.naver.com/search/all?query=&quot;+in_TransactionItem.tostring.Trim]" Version="V3" />
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="353.6,122.4" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="353.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="416,269.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[io_dt쇼핑정보]" DisplayName="out_dtShopping | Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='상품명'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='상품명 Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='가격'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' text='원' idx='1' /&gt;&lt;webctrl tag='em' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="353.6,180.8" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="50" ScopeIdentifier="ecb05776-9e0c-4356-961d-9adabc92c77f" Version="V3">
+                    <uix:NExtractData.NextLink>
+                      <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/search/all?query=%EB%AA%A8%EB%8B%88%ED%84%B0" DesignTimeRectangle="922, 625, 33, 28" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='다음' parentid='content' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='다음' parentid='content' tag='A' type='' class='pagination_next__pZuC6 _nlog_click _nlog_impression_element' check:innerText='다음' /&gt;" Guid="8cb42c30-dbb0-40c7-ba88-9e5a487f2e8a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='모니터 : 네이버 쇼핑' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                    </uix:NExtractData.NextLink>
+                    <uix:NExtractData.Target>
+                      <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/search/all?query=%EB%83%89%EC%9E%A5%EA%B3%A0" DesignTimeRectangle="158, 309, 1175, 1303" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='basicList_list_basis__uNBZx' parentid='content' tag='DIV' /&gt;" Guid="f124bc55-6643-42d6-a26c-b8ebe73c5a2a" InformativeScreenshot="96b43606c596c7d324c3c94758708dfb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='냉장고 : 네이버 쇼핑' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                    </uix:NExtractData.Target>
+                  </uix:NExtractData>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="353.6,270.4" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="100" Version="V4">
+              <uix:NMouseScroll.SearchedElement>
+                <uix:SearchedElement>
+                  <uix:SearchedElement.Target>
+                    <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/search/all?query=%EB%83%89%EC%9E%A5%EA%B3%A0" CVScreenId="7fbc15a1-9e01-4044-8f5c-c2d999e3ec25" DesignTimeRectangle="909, 354, 41, 35" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='다음' parentid='content' tag='A' /&gt;" Guid="18c0af7e-67ea-424d-91ca-9e5348527e32" InformativeScreenshot="fa59b3303065389c22d3036234f27987.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='냉장고 : 네이버 쇼핑' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                  </uix:SearchedElement.Target>
+                  <uix:SearchedElement.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:SearchedElement.Timeout>
+                </uix:SearchedElement>
+              </uix:NMouseScroll.SearchedElement>
+            </uix:NMouseScroll>
+            <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="353.6,122.4" sap2010:WorkflowViewState.IdRef="Delay_5" />
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[io_dt쇼핑정보]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='상품명'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='상품명 Url'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='가격'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='strong' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' text='원' idx='1' /&gt;&lt;webctrl tag='em' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NExtractData_4" LimitExtractionTo="Rows" MaximumResults="50" ScopeIdentifier="ecb05776-9e0c-4356-961d-9adabc92c77f" Version="V4">
+              <uix:NExtractData.NextLink>
+                <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/search/all?query=%EB%83%89%EC%9E%A5%EA%B3%A0" CVScreenId="aab353cc-a030-4187-9e84-0bf731ff7948" CvElementArea="938, 611, 17, 19" CvType="ArrowButton" DesignTimeRectangle="909, 605, 41, 35" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='다음' parentid='content' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='다음' parentid='content' tag='A' type='' class='pagination_next__pZuC6 _nlog_click _nlog_impression_element' check:innerText='다음' /&gt;" Guid="705f28ac-1968-49b1-863d-dc4b4b95b0bb" ScopeSelectorArgument="&lt;html app='chrome.exe' title='냉장고 : 네이버 쇼핑' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.NextLink>
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://search.shopping.naver.com/search/all?query=%EB%83%89%EC%9E%A5%EA%B3%A0" DesignTimeRectangle="158, 186, 1175, 12421" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='basicList_list_basis__uNBZx' parentid='content' tag='DIV' /&gt;" Guid="c62fad8a-c77e-4da3-8b21-b1576d6c4170" InformativeScreenshot="133e01c7ef8ff0aa04c62fb2419a8f9b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='냉장고 : 네이버 쇼핑' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="353.6,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;&gt;몇줄 : &quot;+io_dt쇼핑정보.RowCount.ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </WriteLine>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" sap2010:WorkflowViewState.IdRef="TargetApp_1" InformativeScreenshot="50430aa7198f5a0df5217430f364f003.jpg" Selector="&lt;html app='chrome.exe' title='냉장고 : 네이버 쇼핑' /&gt;" Title="모니터 : 네이버 쇼핑" Url="[&quot;https://search.shopping.naver.com/search/all?query=&quot;+in_TransactionItem.tostring.Trim]" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <If Condition="[io_dt쇼핑정보.Rows.Count &lt; 5]" sap:VirtualizedContainerService.HintSize="449.6,477.6" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,202.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New BusinessRuleException(&quot;[비즈니스룰위반] 50개 미만 추출 데이터&quot;)]" sap:VirtualizedContainerService.HintSize="353.6,113.6" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;&gt;&quot;+in_TransactionItem.tostring+&quot; DT 추출 종료. .&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>
