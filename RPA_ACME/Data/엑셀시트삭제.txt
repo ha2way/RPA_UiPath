@@ -1,0 +1,20 @@
+Sub DeleteSheets(sSheetName)'엑셀 Sheet 인수 선언
+
+	Dim xWs As Worksheet
+	
+	Application.ScreenUpdating = False '화면업데이트 끄기
+	Application.DisplayAlerts = False '화면팝업 끄기
+	
+		Worksheets(sSheetName).Select '{인수시트}선택
+		
+			If Worksheets(sSheetName).Range("A2").Value = None Then '해당 시트 A2의 값이 없다면?'
+				Worksheets(sSheetName).Delete '해당 시트 삭제
+				
+			End If
+			
+ActiveWorkbook.Save ' 엑셀 저장
+	Application.ScreenUpdating = True '화면업데이트 켜기
+	Application.DisplayAlerts = True '화면팝업 켜기
+	
+	
+End Sub

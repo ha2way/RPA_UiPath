@@ -1,0 +1,10 @@
+테넌트>머신>머신 템플릿
+머신이름 
+DDB-UIUR
+클라이언트 ID/머신 키
+cfbe5c91-ad34-47b6-a6ef-fbc50a670e5d
+클라이언트 암호
+VWeUxDQvD0F4EwST
+
+
+https://cloud.uipath.com/rpandgtcdr/DefaultTenant/orchestrator_/
