@@ -1,0 +1,33 @@
+Sub DeleteRowsWithEmptyCells()
+    Dim ws As Worksheet
+    Dim lastRow As Long
+    Dim i As Long
+    Dim j As Long
+    Dim isEmpty As Boolean
+
+    ' "종합" 시트 설정
+    Set ws = ThisWorkbook.Sheets("종합")
+    
+    ' 마지막 행 찾기 (A열 기준으로)
+    lastRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
+
+    ' 마지막 행부터 첫 번째 행까지 역순으로 반복
+    For i = lastRow To 1 Step -1
+        isEmpty = False  ' 초기화
+
+        ' 해당 행의 모든 셀을 검사
+        For j = 1 To ws.Cells(i, ws.Columns.Count).End(xlToLeft).Column
+            If IsEmpty(ws.Cells(i, j).Value) Then
+                isEmpty = True  ' 빈 셀이 발견되면 True로 설정
+                Exit For  ' 더 이상 검사할 필요 없음
+            End If
+        Next j
+
+        ' 빈 셀이 하나라도 있는 경우 행 삭제
+        If isEmpty Then
+            ws.Rows(i).Delete
+        End If
+    Next i
+
+    MsgBox "빈 셀이 있는 행이 모두 삭제되었습니다!"
+End Sub
