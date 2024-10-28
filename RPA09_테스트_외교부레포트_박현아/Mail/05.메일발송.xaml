@@ -116,7 +116,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_05_메일발송" sap:VirtualizedContainerService.HintSize="1149.6000000000001,1293.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_05_메일발송" sap:VirtualizedContainerService.HintSize="1148.8000000000002,1293.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strName" />
       <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
@@ -173,6 +173,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:SendMail>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;05.메일발송종료&gt;&gt;&gt;&gt;&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;05.메일발송종료&gt;&gt;&gt;&gt;&quot;]" />
   </Sequence>
 </Activity>
