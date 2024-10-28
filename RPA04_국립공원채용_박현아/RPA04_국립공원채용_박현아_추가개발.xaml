@@ -136,7 +136,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="• 기존 개발 조건 유지&#xA;• 검색한 공원명의 값이 없다면 시트에 기입하지 않는다.&#xA;• 검증 추가- 공원별정보_전체를 클릭해서 “진행중”인 공원정보가&#xA;내가 수집한 각 공원별 진행중과 같은지 확인하고 추가해야 한&#xA;다면 추가" DisplayName="RPA04_국립공원채용_박현아" sap:VirtualizedContainerService.HintSize="1148.8000000000002,6587.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="• 기존 개발 조건 유지&#xA;• 검색한 공원명의 값이 없다면 시트에 기입하지 않는다.&#xA;• 검증 추가- 공원별정보_전체를 클릭해서 “진행중”인 공원정보가&#xA;내가 수집한 각 공원별 진행중과 같은지 확인하고 추가해야 한&#xA;다면 추가" DisplayName="RPA04_국립공원채용_박현아" sap:VirtualizedContainerService.HintSize="1148.8000000000002,6472" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strNAME" />
       <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
@@ -172,36 +172,36 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence DisplayName="메일 수신 후 첨부파일 받기 | Sequence" sap:VirtualizedContainerService.HintSize="784,1989.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="메일 수신 후 첨부파일 받기 | Sequence" sap:VirtualizedContainerService.HintSize="784,1903.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Gmail_UiPath" CacheStrategy="None" DisplayName="Get Credential" FolderPath="goodhyuna33@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="675.2,175.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstrPW]" Username="[strNAME]" />
-      <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" Password="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="list메일메시지 선언 | Get IMAP Mail Messages" Email="[strNAME]" EnableSSL="True" FilterExpression="FROM 'goodhyuna33@gmail.com'" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="675.2,56.8" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="False" Messages="[list메일메시지]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[sstrPW]" Server="imap.gmail.com" Top="5" />
-      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="675.2,1665.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[list메일메시지]">
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Gmail_UiPath" CacheStrategy="None" DisplayName="Get Credential" FolderPath="goodhyuna33@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="617.6,175.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstrPW]" Username="[strNAME]" />
+      <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" Password="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="list메일메시지 선언 | Get IMAP Mail Messages" Email="[strNAME]" EnableSSL="True" FilterExpression="FROM 'goodhyuna33@gmail.com'" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="617.6,56.8" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="False" Messages="[list메일메시지]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[sstrPW]" Server="imap.gmail.com" Top="5" />
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="617.6,1579.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[list메일메시지]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="snm:MailMessage">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="641.6,1528" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="584,1441.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[System.Text.RegularExpressions.Regex.IsMatch(currentMailMessage.Subject, &quot;\d{4}/\d{2}/\d{2}&quot;)]" sap:VirtualizedContainerService.HintSize="608,1468" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[System.Text.RegularExpressions.Regex.IsMatch(currentMailMessage.Subject, &quot;\d{4}/\d{2}/\d{2}&quot;)]" sap:VirtualizedContainerService.HintSize="550.4,1381.6" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="574.4,1281.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="516.8,1195.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="512,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="483.2,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -223,23 +223,23 @@
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="512,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[str받은메일내용]" />
-                    <Sequence DisplayName="폴더초기화 후 첨부파일 받기 | Sequence" sap:VirtualizedContainerService.HintSize="512,779.2" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="483.2,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[str받은메일내용]" />
+                    <Sequence DisplayName="폴더초기화 후 첨부파일 받기 | Sequence" sap:VirtualizedContainerService.HintSize="483.2,721.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:FolderExistsX DisplayName="Folder Exists" Exists="[bl폴더확인]" sap:VirtualizedContainerService.HintSize="449.6,166.4" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="C:\Users\goodh\OneDrive\Documents\UiPath\RPA04_국립공원채용_박현아\Mail\받은메일\추가_받은메일" />
-                      <If Condition="[bl폴더확인]" sap:VirtualizedContainerService.HintSize="449.6,388" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If Condition="[bl폴더확인]" sap:VirtualizedContainerService.HintSize="449.6,359.2" sap2010:WorkflowViewState.IdRef="If_2">
                         <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,192.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="Sequence_33">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="353.6,104" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="Mail\받은메일\추가_받은메일" Recursive="True" />
+                            <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="382.4,104" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="Mail\받은메일\추가_받은메일" Recursive="True" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -255,7 +255,7 @@
                       </If>
                       <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="449.6,104" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="Mail\받은메일\추가_받은메일" />
                     </Sequence>
-                    <ui:SaveMailAttachments Attachments="[inu첨부파일]" DisplayName="inu첨부파일 | Save Attachments" ExcludeInlineAttachments="False" FolderPath="Mail\받은메일\추가_받은메일" sap:VirtualizedContainerService.HintSize="512,111.2" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentMailMessage]" OverwriteExisting="True" />
+                    <ui:SaveMailAttachments Attachments="[inu첨부파일]" DisplayName="inu첨부파일 | Save Attachments" ExcludeInlineAttachments="False" FolderPath="Mail\받은메일\추가_받은메일" sap:VirtualizedContainerService.HintSize="483.2,111.2" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentMailMessage]" OverwriteExisting="True" />
                   </Sequence>
                 </If.Then>
                 <If.Else>
@@ -297,7 +297,7 @@
       </Assign>
       <ui:CopyFile ContinueOnError="{x:Null}" Destination="Mail\받은메일\추가_받은메일\국립공원채용정보_Temp_박현아_추가.xlsx" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="433.6,178.4" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="Mail\받은메일\추가_받은메일\국립공원채용정보_Temp.xlsx" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="-검색 목록 : 지리산생태탐방원, 경주, 내장산, 무등산생태탐방원, 야생생물보전원, 북한산생태탐방원, 한려해상&#xA;&#xA;str받은메일내용 가공" DisplayName="검색목록에서 산 이름들 가공 | Sequence" sap:VirtualizedContainerService.HintSize="784,415.2" sap2010:WorkflowViewState.IdRef="Sequence_31">
+    <Sequence sap2010:Annotation.AnnotationText="-검색 목록 : 지리산생태탐방원, 경주, 내장산, 무등산생태탐방원, 야생생물보전원, 북한산생태탐방원, 한려해상&#xA;&#xA;str받은메일내용 가공" DisplayName="검색목록에서 산 이름들 가공 | Sequence" sap:VirtualizedContainerService.HintSize="784,386.4" sap2010:WorkflowViewState.IdRef="Sequence_31">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
